@@ -74,7 +74,7 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($validated['password'], $user->password)) {
             return response()->json([
-                'status' => 'failed',
+                'status' => 'Failed',
                 'message' => 'Email atau password salah.',
                 'data' => []
             ], 401);
@@ -89,7 +89,7 @@ class AuthController extends Controller
                 'user' => $user,
                 'token' => $token
             ]
-        ], 200);
+        ], 200)->withCookie(cookie('token', $token, 60, null, null, true, false));
     }
 
     public function logout(Request $request)
@@ -98,7 +98,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Logout berhasil.',
+            'message' => 'Logout berhasil',
             'data' => []
         ], 200);
     }
@@ -111,5 +111,15 @@ class AuthController extends Controller
             'message' => 'Data user ditemukan!',
             'data' =>  $request->user(),
         ], 200);
+    }
+
+    public function loginPage()
+    {
+        return view('auth.login');
+    }
+
+    public function registerPage()
+    {
+        return view('auth.register');
     }
 }

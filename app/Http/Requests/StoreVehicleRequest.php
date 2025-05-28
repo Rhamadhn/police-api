@@ -33,9 +33,9 @@ class StoreVehicleRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'license_plate.required' => 'Nomor polisi harus diisi.',
-            'license_plate.string'   => 'Nomor polisi harus berupa teks.',
-            'license_plate.max'      => 'Nomor polisi maksimal 20 karakter.',
+            'license_plate.required' => 'Nomor plat polisi harus diisi.',
+            'license_plate.string'   => 'Nomor plat polisi harus berupa teks.',
+            'license_plate.max'      => 'Nomor plat polisi maksimal 20 karakter.',
 
             'type.required'          => 'Jenis kendaraan harus diisi.',
             'type.string'            => 'Jenis kendaraan harus berupa teks.',
