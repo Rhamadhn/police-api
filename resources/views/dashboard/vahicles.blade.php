@@ -7,7 +7,8 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Daftar Kendaraan</h4>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal"
+                            id="addVehicleBtn">
                             <i class="fas fa-plus"></i> Tambah Kendaraan
                         </button>
                     </div>
@@ -25,8 +26,7 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="VehicleTableBody">
-
+                        <tbody id="vehiclesTableBody">
                         </tbody>
                     </table>
                 </div>
@@ -42,49 +42,43 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="vehicleForm"> <!-- Ganti ID form menjadi vehicleForm -->
-
+                            <form id="createVehicleForm">
                                 <div class="mb-3">
-                                    <label for="license_plate" class="form-label">Plat Nomor</label>
-                                    <input type="text" class="form-control" id="license_plate" name="license_plate">
-                                    <small id="license_plateError" class="text-danger"></small>
+                                    <label for="createLicensePlate" class="form-label">Plat Nomor</label>
+                                    <input type="text" class="form-control" id="createLicensePlate" name="license_plate">
+                                    <small id="createLicensePlateError" class="text-danger"></small>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="type" class="form-label">Tipe</label>
-                                    <input type="text" class="form-control" id="type" name="type">
-                                    <small id="typeError" class="text-danger"></small>
+                                    <label for="createType" class="form-label">Tipe</label>
+                                    <input type="text" class="form-control" id="createType" name="type">
+                                    <small id="createTypeError" class="text-danger"></small>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="brand" class="form-label">Merk</label>
-                                    <input type="text" class="form-control" id="brand" name="brand">
-                                    <small id="brandError" class="text-danger"></small>
+                                    <label for="createBrand" class="form-label">Merk</label>
+                                    <input type="text" class="form-control" id="createBrand" name="brand">
+                                    <small id="createBrandError" class="text-danger"></small>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="color" class="form-label">Warna</label>
-                                    <input type="text" class="form-control" id="color" name="color">
-                                    <small id="colorError" class="text-danger"></small>
+                                    <label for="createColor" class="form-label">Warna</label>
+                                    <input type="text" class="form-control" id="createColor" name="color">
+                                    <small id="createColorError" class="text-danger"></small>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="is_stolen" class="form-label">Stolen</label>
+                                    <label for="createIsStolen" class="form-label">Stolen</label>
                                     <div class="d-flex">
                                         <div class="form-check me-3">
-                                            <input class="form-check-input" type="radio" name="is_stolen"
-                                                id="is_stolen_yes" value="1">
-                                            <label class="form-check-label" for="is_stolen_yes">Yes</label>
+                                            <input class="form-check-input" type="radio" name="createIsStolen"
+                                                id="createIsStolenYes" value="1">
+                                            <label class="form-check-label" for="createIsStolenYes">Yes</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="is_stolen"
-                                                id="is_stolen_no" value="0" checked>
-                                            <label class="form-check-label" for="is_stolen_no">No</label>
+                                            <input class="form-check-input" type="radio" name="createIsStolen"
+                                                id="createIsStolenNo" value="0" checked>
+                                            <label class="form-check-label" for="createIsStolenNo">No</label>
                                         </div>
                                     </div>
-                                    <small id="is_stolenError" class="text-danger"></small>
+                                    <small id="createIsStolenError" class="text-danger"></small>
                                 </div>
-
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
                         </div>
@@ -99,42 +93,48 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Edit Kendaraan</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form id="editVehicleForm">
-                                <input type="hidden" id="vehicle_id" name="vehicle_id" />
+                                <input type="hidden" id="editVehicleId" name="vehicle_id" />
                                 <div class="mb-3">
-                                    <label for="license_plate" class="form-label">Plat Nomor</label>
-                                    <input type="text" class="form-control" id="license_plate" name="license_plate"
-                                        required>
+                                    <label for="editLicensePlate" class="form-label">Plat Nomor</label>
+                                    <input type="text" class="form-control" id="editLicensePlate"
+                                        name="license_plate" required>
+                                    <small id="editLicensePlateError" class="text-danger"></small>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="type" class="form-label">Tipe</label>
-                                    <input type="text" class="form-control" id="type" name="type" required>
+                                    <label for="editType" class="form-label">Tipe</label>
+                                    <input type="text" class="form-control" id="editType" name="type" required>
+                                    <small id="editTypeError" class="text-danger"></small>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="brand" class="form-label">Merk</label>
-                                    <input type="text" class="form-control" id="brand" name="brand" required>
+                                    <label for="editBrand" class="form-label">Merk</label>
+                                    <input type="text" class="form-control" id="editBrand" name="brand" required>
+                                    <small id="editBrandError" class="text-danger"></small>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="color" class="form-label">Warna</label>
-                                    <input type="text" class="form-control" id="color" name="color" required>
+                                    <label for="editColor" class="form-label">Warna</label>
+                                    <input type="text" class="form-control" id="editColor" name="color" required>
+                                    <small id="editColorError" class="text-danger"></small>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Stolen</label>
                                     <div class="d-flex">
                                         <div class="form-check me-3">
-                                            <input class="form-check-input" type="radio" name="is_stolen"
-                                                id="is_stolen_yes" value="1">
-                                            <label class="form-check-label" for="is_stolen_yes">Yes</label>
+                                            <input class="form-check-input" type="radio" name="editIsStolen"
+                                                id="editIsStolenYes" value="1">
+                                            <label class="form-check-label" for="editIsStolenYes">Yes</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="is_stolen"
-                                                id="is_stolen_no" value="0" checked>
-                                            <label class="form-check-label" for="is_stolen_no">No</label>
+                                            <input class="form-check-input" type="radio" name="editIsStolen"
+                                                id="editIsStolenNo" value="0" checked>
+                                            <label class="form-check-label" for="editIsStolenNo">No</label>
                                         </div>
                                     </div>
+                                    <small id="editIsStolenError" class="text-danger"></small>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
@@ -142,7 +142,6 @@
                     </div>
                 </div>
             </div>
-
 
             @include('components.footer')
         </div>
