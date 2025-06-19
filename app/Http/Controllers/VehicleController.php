@@ -12,6 +12,7 @@ class VehicleController extends Controller
     public function index(Request $request)
     {
         try {
+
             $vehicles = $request->user()->vehicles;
 
             return response()->json([
@@ -76,6 +77,8 @@ class VehicleController extends Controller
 
     public function update(StoreVehicleRequest $request, Vehicle $vehicle)
     {
+        Log::info('USER YANG LOGIN SAAT INI: ' . $request->user()->id);
+Log::info('KENDARAAN YANG MAU DIUPDATE PUNYA user_id: ' . $vehicle->user_id);
         try {
             if ($vehicle->user_id !== $request->user()->id) {
                 return response()->json([
