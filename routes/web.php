@@ -10,5 +10,5 @@ Route::get('/register', [AuthController::class, 'registerPage'])->name('register
 Route::group(['prefix' => 'panel-control'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/vehicles', [DashboardController::class, 'vahicles'])->name('vahicles');
-    Route::get('/officers', [DashboardController::class, 'officers'])->name('officers');
+    Route::get('/officers', [DashboardController::class, 'officers'])->name('panel.officers');
 });
