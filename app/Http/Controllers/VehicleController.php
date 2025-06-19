@@ -80,7 +80,7 @@ class VehicleController extends Controller
         Log::info('USER YANG LOGIN SAAT INI: ' . $request->user()->id);
 Log::info('KENDARAAN YANG MAU DIUPDATE PUNYA user_id: ' . $vehicle->user_id);
         try {
-            if ($vehicle->user_id !== $request->user()->id) {
+            if ((int) $vehicle->user_id !== (int) $request->user()->id) {
                 return response()->json([
                     'status' => 'failed',
                     'message' => 'Unauthorized action. Anda bukan pemilik kendaraan ini.',
