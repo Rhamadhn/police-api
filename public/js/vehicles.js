@@ -146,7 +146,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
                 <td>${item.type}</td>
                 <td>${item.brand}</td>
                 <td>${item.color}</td>
-                <td>${item.is_stolen === true || item.is_stolen === 1 ? 'Yes' : 'No'}</td>
+                <td>${item.is_stolen === true || item.is_stolen === 1 || item.is_stolen === "1" ? 'Yes' : 'No'}</td>
                 <td>
                     <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
                         data-bs-target="#editVehicleModal" onclick="showEditVehicleModal(${item.id}, ${index})">Edit</button>
