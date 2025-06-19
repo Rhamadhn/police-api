@@ -137,6 +137,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
         }
 
         window.vehicleData = data; // menyimpan data pada scope global
+console.log("🚨 Debug Data Vehicle:");
 
         data.forEach((item, index) => {
             const row = document.createElement('tr');
