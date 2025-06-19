@@ -18,6 +18,10 @@ class Vehicle extends Model
         'is_stolen',
     ];
 
+    protected $casts = [
+        'is_stolen' => 'boolean',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -137,10 +137,8 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
         }
 
         window.vehicleData = data; // menyimpan data pada scope global
-console.log("🚨 Debug Data Vehicle:");
 
         data.forEach((item, index) => {
-                console.log(`#${i + 1}`, "id:", item.id, "is_stolen:", item.is_stolen, "typeof:", typeof item.is_stolen);
             const row = document.createElement('tr');
             row.innerHTML = `
                 <th scope="row">${index + 1}</th>
@@ -148,7 +146,7 @@ console.log("🚨 Debug Data Vehicle:");
                 <td>${item.type}</td>
                 <td>${item.brand}</td>
                 <td>${item.color}</td>
-                <td>${item.is_stolen === true || item.is_stolen === 1 || item.is_stolen === "1" ? 'Yes' : 'No'}</td>
+                <td>${Number(item.is_stolen) === 1 ? 'Yes' : 'No'}</td>
                 <td>
                     <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
                         data-bs-target="#editVehicleModal" onclick="showEditVehicleModal(${item.id}, ${index})">Edit</button>

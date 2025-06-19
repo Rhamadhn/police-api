@@ -32,7 +32,6 @@ class VehicleController extends Controller
 
     public function store(StoreVehicleRequest $request)
     {
-                Log::info('CREATE VEHICLE — is_stolen:', ['value' => $request->is_stolen]); // ✅ Tambah ini
         try {
             $vehicle = $request->user()->vehicles()->create($request->validated());
 
