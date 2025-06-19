@@ -140,6 +140,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
 console.log("🚨 Debug Data Vehicle:");
 
         data.forEach((item, index) => {
+                console.log(`#${i + 1}`, "id:", item.id, "is_stolen:", item.is_stolen, "typeof:", typeof item.is_stolen);
             const row = document.createElement('tr');
             row.innerHTML = `
                 <th scope="row">${index + 1}</th>
