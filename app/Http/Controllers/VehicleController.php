@@ -105,7 +105,7 @@ Log::info('KENDARAAN YANG MAU DIUPDATE PUNYA user_id: ' . $vehicle->user_id);
         }
     }
 
-    public function destroy(Vehicle $vehicle)
+    public function destroy(Request $request, Vehicle $vehicle)
     {
         try {
             if ((int) $vehicle->user_id !== (int) $request->user()->id) {
