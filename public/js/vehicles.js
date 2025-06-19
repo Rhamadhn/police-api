@@ -84,6 +84,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
         const isStolen = document.querySelector('input[name="createIsStolen"]:checked')?.value ?? '0';
 
         try {
+            console.log("DEBUG CREATE — is_stolen:", isStolen);
             const response = await axios.post('/api/panel-control/vehicles', {
                 license_plate: licensePlate,
                 type: type,
@@ -207,6 +208,8 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
         const token = decodeURIComponent(getCookie('token'));
 
         try {
+console.log("DEBUG UPDATE — is_stolen:", isStolen);
+ 
             const response = await axios.put(`/api/panel-control/vehicles/${id}`, {
                 license_plate: license_plate,
                 type: type,
