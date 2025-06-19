@@ -108,7 +108,7 @@ Log::info('KENDARAAN YANG MAU DIUPDATE PUNYA user_id: ' . $vehicle->user_id);
     public function destroy(Vehicle $vehicle)
     {
         try {
-            if ($vehicle->user_id !== auth()->id()) {
+            if ((int) $vehicle->user_id !== (int) $request->user()->id) {
                 return response()->json([
                     'status' => 'failed',
                     'message' => 'Unauthorized action. Anda bukan pemilik kendaraan ini.',
