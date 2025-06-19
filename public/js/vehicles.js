@@ -81,7 +81,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
         const type = document.getElementById("createType").value.trim();
         const brand = document.getElementById("createBrand").value.trim();
         const color = document.getElementById("createColor").value.trim();
-        const isStolen = document.querySelector('input[name="createIsStolen"]:checked')?.value === '1';
+        const isStolen = document.querySelector('input[name="createIsStolen"]:checked')?.value ?? '0';
 
         try {
             const response = await axios.post('/api/panel-control/vehicles', {
@@ -89,7 +89,7 @@ if (window.location.pathname.includes('/panel-control/vehicles')) {
                 type: type,
                 brand: brand,
                 color: color,
-                is_stolen: isStolen
+                is_stolen: parseInt(isStolen)
             }, {
                 headers: {
                     'Authorization': `Bearer ${token}`,

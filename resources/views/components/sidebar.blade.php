@@ -28,6 +28,12 @@
                         <span class="hide-menu">Vahicles</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('officers') }}" aria-expanded="false">
+                        <i class="ti ti-user"></i>
+                        <span class="hide-menu">Officers</span>
+                    </a>
+                </li>
         </nav>
         <!-- End Sidebar navigation -->
     </div>
