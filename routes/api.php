@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\OfficerController;
+use App\Http\Controllers\LocationController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -26,4 +27,6 @@ Route::group(['prefix' => 'panel-control', 'middleware' => ['auth:sanctum']], fu
     Route::get('/officers/{officer}', [OfficerController::class, 'show']);
     Route::put('/officers/{officer}', [OfficerController::class, 'update']);
     Route::delete('/officers/{officer}', [OfficerController::class, 'destroy']);
+
+    Route::apiResource('locations', LocationController::class);
 });

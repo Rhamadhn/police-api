@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use App\Models\Officer;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -28,5 +29,13 @@ class DashboardController extends Controller
         $officers = Officer::all();
 
         return view('dashboard.officers', compact('officers'));
+    }
+
+    // Fungsi untuk menampilkan lokasi
+    public function locations()
+    {
+        $locations = Location::all();
+
+        return view('dashboard.locations', compact('locations'));
     }
 }

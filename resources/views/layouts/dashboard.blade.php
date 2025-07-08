@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
 
     <!-- Plugin pihak ketiga -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.1/css/dataTables.dataTables.min.css">
 
 
@@ -65,12 +66,14 @@
     <script src="https://cdn.datatables.net/2.3.1/js/dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 
     <script src="{{ asset('js/utils.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <script src="{{ asset('js/vehicles.js') }}"></script>
     <script src="{{ asset('js/officers.js') }}"></script>
+    <script src="{{ asset('js/locations.js') }}"></script>
 </body>
 
 </html>

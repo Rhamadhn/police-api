@@ -34,6 +34,13 @@
                         <span class="hide-menu">Officers</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('locations')}}" aria-expanded="false">
+                        <i class="ti ti-map-pin"></i>
+                        <span class="hide-menu">Locations</span>
+                    </a>
+                </li>
+
         </nav>
         <!-- End Sidebar navigation -->
     </div>
